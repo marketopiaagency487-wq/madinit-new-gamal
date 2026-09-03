@@ -1,52 +1,15 @@
-import type { Metadata } from "next";
-import { site } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "من نحن | " + site.agency,
-  description:
-    "معلومات عن الجهة المسؤولة عن هذه الصفحة التسويقية وطرق التواصل معها.",
-};
-
-export default function AboutPage() {
+export const metadata = { title: "من نحن | مشاريع مدينة مصر" };
+export default function About() {
   return (
-    <article className="mx-auto max-w-3xl px-4 pb-20 pt-32">
-      <p className="eyebrow">About Us</p>
-      <h1 className="mt-3 text-3xl">من نحن</h1>
-      <div className="ribbon-rule my-8" />
-
-      <div className="space-y-5 leading-8 text-ink-2">
-        <p>
-          {site.agency} شركة تسويق عقاري تعمل في السوق المصري وتقدم استشارات
-          للمشترين والمستثمرين الباحثين عن وحدات سكنية وتجارية في القاهرة
-          الجديدة ومستقبل سيتي والمدن الجديدة.
-        </p>
-        <p>
-          هذه الصفحة مخصصة لعرض مشاريع شركة مدينة مصر للإسكان والتعمير. نحن لسنا
-          المطور العقاري، ولا نمثل الشركة المطورة قانونيًا، ودورنا يقتصر على
-          التسويق وترتيب المعاينات وتوصيل العميل بإدارة مبيعات المطور.
-        </p>
-        <h2 className="pt-4 text-xl">خدماتنا</h2>
-        <ul className="list-disc space-y-2 pr-5">
-          <li>استشارة مجانية لاختيار المشروع والوحدة المناسبة للميزانية.</li>
-          <li>توفير كتالوجات الأسعار وجداول الأقساط المحدّثة.</li>
-          <li>ترتيب معاينة على الأرض ومتابعة إجراءات الحجز مع المطور.</li>
-        </ul>
-
-        <h2 className="pt-4 text-xl">التواصل</h2>
-        <p>
-          الهاتف:{" "}
-          <a href={`tel:${site.phoneIntl}`} className="num underline">
-            {site.phone}
-          </a>
-          <br />
-          البريد الإلكتروني:{" "}
-          <a href={`mailto:${site.email}`} className="underline">
-            {site.email}
-          </a>
-          <br />
-          مقر العمل: القاهرة، جمهورية مصر العربية.
-        </p>
+    <main className="min-h-screen bg-ivory text-ink/80">
+      <div className="mx-auto max-w-3xl px-4 py-16 leading-relaxed space-y-5">
+        <h1 className="text-3xl font-bold text-ink">من نحن</h1>
+        <p>نحن منصة معلومات واستفسارات عقارية مستقلة يديرها فريق مبيعات معتمد بخبرة تتجاوز خمس سنوات في تسويق مشروعات كبرى شركات التطوير العقاري في مصر، ومنها مشروعات مدينة مصر للإسكان والتعمير بالقاهرة الجديدة ومدينة المستقبل.</p>
+        <p>دورنا هو تزويدك بأحدث المعلومات الدقيقة عن الأسعار والمساحات وأنظمة السداد، ومساعدتك في حجز وحدتك مباشرة من المطور بنفس الأسعار الرسمية ودون أي رسوم إضافية — عمولتنا يتحملها المطور بالكامل ولا تؤثر على سعر وحدتك.</p>
+        <p>هذه الصفحة ليست الموقع الرسمي لشركة مدينة مصر للإسكان والتعمير، وجميع العلامات التجارية مملوكة لأصحابها.</p>
+        <p>للتواصل: <a dir="ltr" href="tel:+201029944403" className="text-emerald font-semibold">01029944403</a></p>
+        <p><a href="/" className="text-emerald underline">العودة للصفحة الرئيسية</a></p>
       </div>
-    </article>
+    </main>
   );
 }

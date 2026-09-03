@@ -1,61 +1,18 @@
-import type { Metadata } from "next";
-import { site } from "@/lib/site";
-
-export const metadata: Metadata = {
-  title: "سياسة الخصوصية | " + site.agency,
-  description:
-    "كيف نجمع بياناتك ونستخدمها ونحميها، وحقوقك في الوصول إليها أو حذفها.",
-};
-
-export default function PrivacyPage() {
+export const metadata = { title: "سياسة الخصوصية | مشاريع مدينة مصر" };
+export default function Privacy() {
   return (
-    <article className="mx-auto max-w-3xl px-4 pb-20 pt-32">
-      <p className="eyebrow">Privacy</p>
-      <h1 className="mt-3 text-3xl">سياسة الخصوصية</h1>
-      <div className="ribbon-rule my-8" />
-
-      <div className="space-y-5 leading-8 text-ink-2">
-        <h2 className="text-xl">البيانات التي نجمعها</h2>
-        <p>
-          نجمع الاسم ورقم الهاتف والبريد الإلكتروني والمشروع محل الاهتمام
-          والميزانية التقريبية، وذلك فقط عند إرسالك نموذج التواصل بإرادتك. كما
-          نجمع بيانات تصفح غير شخصية عبر ملفات تعريف الارتباط وأدوات القياس.
-        </p>
-
-        <h2 className="pt-2 text-xl">استخدام البيانات</h2>
-        <ul className="list-disc space-y-2 pr-5">
-          <li>الرد على استفسارك وإرسال كتالوج الأسعار المطلوب.</li>
-          <li>ترتيب معاينة أو مكالمة مع مستشار عقاري.</li>
-          <li>قياس أداء الحملات الإعلانية بشكل مجمّع وغير شخصي.</li>
-        </ul>
-        <p>
-          لا نبيع بياناتك ولا نشاركها مع أطراف ثالثة لأغراض تسويقية. قد تتم
-          مشاركة بياناتك مع الشركة المطورة فقط عند رغبتك في إتمام الحجز.
-        </p>
-
-        <h2 className="pt-2 text-xl">ملفات تعريف الارتباط</h2>
-        <p>
-          نستخدم كوكيز أساسية لتشغيل الموقع، وكوكيز تحليلية وإعلانية من Google
-          لقياس التحويلات. يمكنك تعطيلها من إعدادات المتصفح، مع احتمال تأثر بعض
-          الوظائف.
-        </p>
-
-        <h2 className="pt-2 text-xl">حقوقك</h2>
-        <p>
-          يحق لك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها نهائيًا، أو سحب
-          موافقتك على التواصل، بمراسلتنا على{" "}
-          <a href={`mailto:${site.email}`} className="underline">
-            {site.email}
-          </a>{" "}
-          ونستجيب خلال مدة معقولة.
-        </p>
-
-        <h2 className="pt-2 text-xl">الأمان والاحتفاظ</h2>
-        <p>
-          نحتفظ بالبيانات للمدة اللازمة لخدمة الغرض الذي جُمعت من أجله، ونطبق
-          إجراءات تقنية وتنظيمية معقولة لحمايتها من الوصول غير المصرح به.
-        </p>
+    <main className="min-h-screen bg-ivory text-ink/80">
+      <div className="mx-auto max-w-3xl px-4 py-16 leading-relaxed space-y-5">
+        <h1 className="text-3xl font-bold text-ink">سياسة الخصوصية</h1>
+        <p>نلتزم بحماية خصوصية زوار هذه الصفحة. عند تسجيل بياناتك (الاسم ورقم الهاتف) فإنها تُستخدم فقط للتواصل معك بخصوص استفسارك العقاري وإرسال تفاصيل المشروع المطلوب.</p>
+        <h2 className="font-bold text-xl text-ink">البيانات التي نجمعها</h2>
+        <p>الاسم، رقم الهاتف وكود الدولة، والمشروع محل الاهتمام. كما نستخدم ملفات تعريف الارتباط (Cookies) وأدوات قياس مثل Google Ads لقياس أداء الحملات الإعلانية وتحسين تجربة التصفح.</p>
+        <h2 className="font-bold text-xl text-ink">مشاركة البيانات</h2>
+        <p>لا نبيع بياناتك ولا نشاركها مع أي طرف ثالث لأغراض تسويقية خارجية. قد تتم مشاركة بيانات التواصل مع فريق المبيعات المعتمد المختص بالمشروع لإتمام خدمتك فقط.</p>
+        <h2 className="font-bold text-xl text-ink">حقوقك</h2>
+        <p>يحق لك طلب حذف بياناتك أو إيقاف التواصل في أي وقت عبر <span dir="ltr">01029944403</span>.</p>
+        <p><a href="/" className="text-emerald underline">العودة للصفحة الرئيسية</a></p>
       </div>
-    </article>
+    </main>
   );
 }
