@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0b1420;
+  --color-ink-2: #14273a;
+  --color-ink-3: #24405b;
+  --color-paper: #faf9f7;
+  --color-stone: #e6e1d8;
+  --color-stone-2: #cfc8bb;
+  --color-wood: #a9743c;
+  --color-wood-2: #d8a967;
+  --color-moss: #5a6e4e;
+
+  --font-display: "Noto Kufi Arabic", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-num: "Archivo", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+/* أرقام إنجليزية دايمًا */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-weight: 600;
+}
+
+.eyebrow {
+  font-family: var(--font-num);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-wood);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+/* كارت الـ slab */
+.slab {
+  background: #fff;
+  border-radius: 0 28px 28px 0;
+  border-inline-start: 4px solid var(--color-wood);
+  box-shadow: 0 1px 0 rgba(11, 20, 32, 0.06);
+}
+
+.slab-dark {
+  background: var(--color-ink-2);
+  border-radius: 0 28px 28px 0;
+  border-inline-start: 4px solid var(--color-wood-2);
+  color: var(--color-paper);
+}
+
+.frame {
+  border-radius: 4px 36px 36px 4px;
+  border-inline-start: 4px solid var(--color-wood);
+  overflow: hidden;
+}
+
+.ribbon-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-wood) 20%,
+    var(--color-wood) 80%,
+    transparent
+  );
+  opacity: 0.5;
+}
+
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Ken burns للهيرو */
+@keyframes kenburns {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1.16);
+  }
+}
+.kenburns {
+  animation: kenburns 22s ease-out forwards;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-wood-2);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .kenburns {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* شريط الموبايل السفلي: مسافة أمان أسفل الصفحة */
+@media (max-width: 767px) {
+  body {
+    padding-bottom: 68px;
+  }
+}
